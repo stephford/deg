@@ -1,0 +1,13 @@
+Model 1 <-lmer(Averagerank~Nuttype+Position+(1|ID), data=order.data)
+#Testing the effects of nut type and position on the order in which the squirrels chose their nuts
+> drop1(model1,test="Chisq")
+model1a: Averagerank ~ Nuttype + Position + (Nuttype | ID)
+#Letting the slope term vary between individuals to look for individual level effects
+#Test the significance of the fixed effects- which influenced the order they chose the nuts?
+> model2<-lmer(Propconsumed~Nuttype+Position+(1|ID), data=order.data)
+#An alternative model to test the same fixed effects but for the proportion of nuts that are consumed
+model2a: Propconsumed ~ Nuttype + Position + (Nuttype | ID)
+#Letting the slope term vary between individuals to look for individual level effects
+plotting the models: xyplot(Averagerank ~ Nuttype, group =ID,pch=16,cex=0.6, type=c("p","r"),data=order.data) &
+xyplot(Propconsumed ~ Nuttype, group =ID,pch=16,cex=0.6, type=c("p","r"),data=order.data)
+boxplot(Propconsumed~Nuttype, data=order.data) 
