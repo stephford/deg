@@ -1,0 +1,2 @@
+ID <- glm(formula = Behaviour~ AttemptsID, family = binomial, data=data.set)
+#Binary logistic regression model
