@@ -1,2 +1,4 @@
 ID <- glm(formula = Behaviour~ AttemptsID, family = binomial, data=data.set)
 #Binary logistic regression model
+drop1(ID, test="Chisq")
+#Test the significance of the model
