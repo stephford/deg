@@ -1,0 +1,2 @@
+cor.test (B1.coefficient,Trials.to.criterion, method= "spearman”, data = B1) 
+#Testing two behavioural inhibition measures for a correlation, non-normal data so Spearman's used.
